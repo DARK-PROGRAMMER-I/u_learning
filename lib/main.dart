@@ -68,21 +68,22 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          floatingActionButton: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              FloatingActionButton(
-                onPressed: (){BlocProvider.of<AppBlocs>(context).add(Increment());},
-                tooltip: 'Increment',
-                child: const Icon(Icons.add),
-              ),
-              FloatingActionButton(
-                onPressed: (){BlocProvider.of<AppBlocs>(context).add(Decrement());},
-                tooltip: 'Decrement',
-                child: const Icon(Icons.remove),
-              ),
-            ],
-          ), // This trailing comma makes auto-formatting nicer for build methods.
+
+            bottomNavigationBar:  Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FloatingActionButton(
+                  onPressed: (){BlocProvider.of<AppBlocs>(context).add(Increment());},
+                  tooltip: 'Increment',
+                  child: const Icon(Icons.add),
+                ),
+                FloatingActionButton(
+                  onPressed: (){BlocProvider.of<AppBlocs>(context).add(Decrement());},
+                  tooltip: 'Decrement',
+                  child: const Icon(Icons.remove),
+                ),
+              ],
+            ),
         );
       },
 
