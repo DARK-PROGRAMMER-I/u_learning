@@ -7,6 +7,10 @@ class AppBlocs extends Bloc<BlocEvents, BlocStates>{
     on<Increment>((event, emit) {
       emit(BlocStates(counter: state.counter + 1));
     });
+
+    on<Decrement>((event, emit) {
+      emit(BlocStates(counter: state.counter -1));
+    });
   }
 
 
