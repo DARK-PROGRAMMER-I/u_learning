@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: const Icon(Icons.add),
               ),
               FloatingActionButton(
-                onPressed: (){BlocProvider.of<AppBlocs>(context).add(Increment());},
+                onPressed: (){BlocProvider.of<AppBlocs>(context).add(Decrement());},
                 tooltip: 'Decrement',
                 child: const Icon(Icons.remove),
               ),
