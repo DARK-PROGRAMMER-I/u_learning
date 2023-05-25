@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:u_learning/app_blocs/app_blocs.dart';
+import 'package:u_learning/app_blocs/bloc_events.dart';
+import 'package:u_learning/app_blocs/bloc_states.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,29 +48,34 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+    return BlocBuilder<AppBlocs, BlocStates>(
+      builder: (BuildContext context, state) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(widget.title),
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(
+                  'You have pushed the button this many times:',
+                ),
+                Text(
+                  '${state.counter}',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: (){BlocProvider.of<AppBlocs>(context).add(Increment());},
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ), // This trailing comma makes auto-formatting nicer for build methods.
+        );
+      },
+
     );
   }
 }
