@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:u_learning/app_blocs/app_blocs.dart';
 import 'package:u_learning/app_blocs/bloc_events.dart';
 import 'package:u_learning/app_blocs/bloc_states.dart';
+import 'package:u_learning/routes/route_manager.dart';
+import 'package:u_learning/utils/constants/app_constants.dart';
+import 'package:u_learning/utils/thems/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,17 +18,26 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context)=> AppBlocs(),
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-
-          primarySwatch: Colors.blue,
-        ),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(AppConstants.screenWidget, AppConstants.screenHeight),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return BlocProvider(
+          create: (context)=> AppBlocs(),
+          child: MaterialApp(
+            title: 'Flutter Demo',
+            theme: lightThemeData(context),
+            // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+            initialRoute: AppRoutes.welcomeScreen,
+            onGenerateRoute: AppRoutes.onGenerateRoute,
+          ),
+        );
+      },
     );
+
+
+
   }
 }
 
