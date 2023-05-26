@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:u_learning/utils/constants/assets_manager.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class WelcomeScreen extends StatelessWidget {
         children: [
           Column(
             children: [
-
+              Image.asset('assets/images/reading.png')
             ],
           )
         ],

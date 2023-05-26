@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:u_learning/app_blocs/app_blocs.dart';
 import 'package:u_learning/app_blocs/bloc_events.dart';
 import 'package:u_learning/app_blocs/bloc_states.dart';
+import 'package:u_learning/routes/route_manager.dart';
 import 'package:u_learning/utils/constants/app_constants.dart';
+import 'package:u_learning/utils/thems/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +28,9 @@ class MyApp extends StatelessWidget {
           child: MaterialApp(
             title: 'Flutter Demo',
             theme: lightThemeData(context),
-            home: const MyHomePage(title: 'Flutter Demo Home Page'),
+            // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+            initialRoute: AppRoutes.welcomeScreen,
+            onGenerateRoute: AppRoutes.onGenerateRoute,
           ),
         );
       },

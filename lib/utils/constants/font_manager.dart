@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'dart:ui';
 
-import 'package:just_go_out/commons/common_libs.dart';
 
 class FontWeightManager {
   static const FontWeight light = FontWeight.w300;
