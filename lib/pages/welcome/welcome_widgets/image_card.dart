@@ -3,15 +3,17 @@ import '../../../common/common_libs.dart';
 
 class ImageCard extends StatelessWidget {
   final String imagePath;
-  const ImageCard({Key? key}) : super(key: key);
+  final String title;
+  final String description;
+  const ImageCard({Key? key, required this.imagePath, required this.title, required this.description}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset('assets/images/reading.png'),
+        Image.asset(imagePath),
         SizedBox(height: 20.h,),
-        Text('First See Learning', style: getSemiBoldStyle(
+        Text(title, style: getSemiBoldStyle(
           fontSize: MyFonts.size26,
         ),),
         SizedBox(height: 15.h,),
@@ -20,7 +22,7 @@ class ImageCard extends StatelessWidget {
               maxWidth: 300.w
           ),
           child: Text(
-            'Forget about a for off paper all knowledge in one learning',
+            description,
             textAlign: TextAlign.center,
             style: getRegularStyle(
                 fontSize: MyFonts.size16,
