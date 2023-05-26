@@ -17,7 +17,7 @@ class WelcomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height:550.h,
+            height:510.h,
             child: PageView(
               children: const [
                 ImageCard(
@@ -27,12 +27,12 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 ImageCard(
                   imagePath: AppAssets.man,
-                  title: 'First See Learning',
-                  description: 'Forget about a for off paper all knowledge in one learning',
+                  title: 'Connect With Everyone',
+                  description: 'Always keep in-touch with your Tutor & Friend. Let`s get connected!',
                 ),
                 ImageCard(
                   imagePath: AppAssets.boy,
-                  title: 'First See Learning',
+                  title: 'Always Facinated Learning',
                   description: 'Forget about a for off paper all knowledge in one learning',
                 ),
               ],
