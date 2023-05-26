@@ -19,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
             children: [
               Image.asset('assets/images/reading.png'),
               SizedBox(height: 20.h,),
-              Text('First See Learning', style: getBoldStyle(
+              Text('First See Learning', style: getSemiBoldStyle(
                 fontSize: MyFonts.size26,
               ),),
               SizedBox(height: 15.h,),
@@ -30,7 +30,7 @@ class WelcomeScreen extends StatelessWidget {
                 child: Text(
                   'Forget about a for off paper all knowledge in one learning',
                   textAlign: TextAlign.center,
-                  style: getMediumStyle(
+                  style: getRegularStyle(
                   fontSize: MyFonts.size16,
                   color: MyColors.bluishGreyColor
                 ),),
@@ -38,7 +38,13 @@ class WelcomeScreen extends StatelessWidget {
             ],
           ),
           SizedBox(height: 70.h,),
-          CustomButton(onPressed: onPressed, buttonText: buttonText),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
+            child: CustomButton(
+                onPressed: (){},
+                buttonText: 'Next'
+            ),
+          ),
         ],
       )
     );
