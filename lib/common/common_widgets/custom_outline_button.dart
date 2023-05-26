@@ -1,5 +1,5 @@
-import 'package:just_go_out/commons/common_libs.dart';
-import 'package:just_go_out/utils/loading.dart';
+
+import '../common_libs.dart';
 
 class CustomOutlineButton extends StatelessWidget {
   const CustomOutlineButton({
