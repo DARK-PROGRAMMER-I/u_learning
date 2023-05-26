@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:u_learning/common/common_libs.dart';
 import 'package:u_learning/common/common_widgets/custom_button.dart';
@@ -33,12 +34,27 @@ class WelcomeScreen extends StatelessWidget {
                 ImageCard(
                   imagePath: AppAssets.boy,
                   title: 'Always Facinated Learning',
-                  description: 'Forget about a for off paper all knowledge in one learning',
+                  description: 'Anywhere, anytime. The time is always at your discretion, so study whenever you want. ',
                 ),
               ],
             ),
           ),
           SizedBox(height: 70.h,),
+          // Positioned(
+          //   bottom: 30,
+          //   child: DotsIndicator(
+          //     dotsCount: totalImages,
+          //     position: page,
+          //     decorator: DotsDecorator(
+          //         activeColor: Colors.white,
+          //         color: Colors.white.withOpacity(0.3),
+          //         size: Size.square(8.h),
+          //         activeSize: Size(8.w, 8.h),
+          //         activeShape: RoundedRectangleBorder(
+          //           borderRadius: BorderRadius.circular(10.r),
+          //         )),
+          //   ),
+          // ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: CustomButton(
