@@ -16,20 +16,35 @@ class WelcomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          PageView(
-            children: [
-              ImageCard(
-                imagePath: AppAssets.reading,
-                title: 'First See Learning',
-                description: ,
-              )
-            ],
+          SizedBox(
+            height:550.h,
+            child: PageView(
+              children: const [
+                ImageCard(
+                  imagePath: AppAssets.reading,
+                  title: 'First See Learning',
+                  description: 'Forget about a for off paper all knowledge in one learning',
+                ),
+                ImageCard(
+                  imagePath: AppAssets.man,
+                  title: 'First See Learning',
+                  description: 'Forget about a for off paper all knowledge in one learning',
+                ),
+                ImageCard(
+                  imagePath: AppAssets.boy,
+                  title: 'First See Learning',
+                  description: 'Forget about a for off paper all knowledge in one learning',
+                ),
+              ],
+            ),
           ),
           SizedBox(height: 70.h,),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: CustomButton(
-                onPressed: (){},
+                onPressed: (){
+
+                },
                 buttonText: 'Next'
             ),
           ),
