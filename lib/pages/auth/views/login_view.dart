@@ -75,15 +75,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         onChanged: (val){},
                         onFieldSubmitted: (val){},
                       iconData: Icons.person,
-                        labelText: 'Email '
+                        labelText: 'Email ',
+                      hintText: 'Enter your email',
                     ),
                     SizedBox(height: 10.h,),
                     CustomTextFieldNew(
-                        controller: _emailCtr,
+                        controller: _passCtr,
+                        obscure: true,
                         onChanged: (val){},
                         onFieldSubmitted: (val){},
                         iconData: Icons.lock,
-                        labelText: 'Password '
+                        labelText: 'Password ',
+                      hintText: 'Enter your password',
                     ),
 
                     SizedBox(height: 20.h,),
