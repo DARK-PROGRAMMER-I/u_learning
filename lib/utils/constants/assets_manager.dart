@@ -8,6 +8,8 @@ class AppAssets{
   static const String man = '$imagesPath/man.png';
   static const String boy = '$imagesPath/boy.png';
 
-  static const String homeIcon = '$iconPath/Home.png';
+  static const String googleIcon = '$iconPath/google.png';
+  static const String facebookIcon = '$iconPath/facebook.png';
+  static const String appleIcon = '$iconPath/apple.png';
 
 }

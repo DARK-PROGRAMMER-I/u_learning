@@ -91,7 +91,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         state.page = 2;
                         BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvents());
                       }else{
-                        Navigator.pushNamed(context, AppRoutes.homeScreen);
+                        Navigator.pushNamed(context, AppRoutes.loginScreen);
                       }
                     },
                     buttonText: state.page == 0 || state.page == 1 ? 'Next' : 'Let`s Begin'
