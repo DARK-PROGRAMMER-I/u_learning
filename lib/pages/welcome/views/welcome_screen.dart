@@ -26,6 +26,10 @@ class WelcomeScreen extends StatelessWidget {
               SizedBox(
                 height:510.h,
                 child: PageView(
+                  onPageChanged: (int newValue){
+                    state.page = newValue;
+                    BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvents());
+                  },
                   children: const [
                     ImageCard(
                       imagePath: AppAssets.reading,
@@ -62,9 +66,17 @@ class WelcomeScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 30.w),
                 child: CustomButton(
                     onPressed: (){
+                      if(state.page == 0 ){
+                        state.page = 1;
+                        BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvents());
+                      }else if( state.page == 1){
+                        state.page = 2;
+                        BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvents());
+                      }else{
 
+                      }
                     },
-                    buttonText: 'Next'
+                    buttonText: state.page == 0 || state.page == 1 ? 'Next' : 'Let`s Begin'
                 ),
               ),
             ],
