@@ -24,8 +24,12 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return BlocProvider(
-          create: (context)=> WelcomeBloc(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context)=> WelcomeBloc(), ),
+            BlocProvider(create: (context)=> AppBlocs(), ),
+          ],
+
           child: MaterialApp(
             title: 'Flutter Demo',
             debugShowCheckedModeBanner: false,
