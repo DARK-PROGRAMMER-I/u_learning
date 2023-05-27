@@ -6,9 +6,8 @@ import '../home_blocs/home_blocs.dart';
 import '../home_blocs/home_events.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key, required this.title});
+  const HomeScreen({super.key, });
 
-  final String title;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -22,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (BuildContext context, state) {
         return Scaffold(
           appBar: AppBar(
-            title: Text(widget.title),
+            title: Text('Home Screen'),
           ),
           body: Center(
             child: Column(
@@ -43,11 +42,13 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               FloatingActionButton(
+                heroTag: 'hola-kapito',
                 onPressed: (){BlocProvider.of<HomeBlocs>(context).add(Increment());},
                 tooltip: 'Increment',
                 child: const Icon(Icons.add),
               ),
               FloatingActionButton(
+                heroTag: 'hola',
                 onPressed: (){BlocProvider.of<HomeBlocs>(context).add(Decrement());},
                 tooltip: 'Decrement',
                 child: const Icon(Icons.remove),

@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:u_learning/pages/home/views/home_screen.dart';
 import 'package:u_learning/pages/welcome/views/welcome_screen.dart';
 import '../utils/error_screen.dart';
 import 'navigation.dart';
 
 class AppRoutes {
   static const String welcomeScreen = '/welcomeScreen';
+  static const String homeScreen = '/homeScreen';
 
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case welcomeScreen:
         return _buildRoute(const WelcomeScreen());
+      case homeScreen:
+        return _buildRoute(const HomeScreen());
 
       default:
         return unDefinedRoute();

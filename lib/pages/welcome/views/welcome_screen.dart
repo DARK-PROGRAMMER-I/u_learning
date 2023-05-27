@@ -6,6 +6,7 @@ import 'package:u_learning/common/common_widgets/custom_button.dart';
 import 'package:u_learning/pages/welcome/welcome_blocs/welcome_bloc.dart';
 import 'package:u_learning/pages/welcome/welcome_blocs/welcome_events.dart';
 import 'package:u_learning/pages/welcome/welcome_blocs/welcome_states.dart';
+import 'package:u_learning/routes/route_manager.dart';
 import 'package:u_learning/utils/constants/assets_manager.dart';
 import 'package:u_learning/utils/constants/font_manager.dart';
 
@@ -90,7 +91,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         state.page = 2;
                         BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvents());
                       }else{
-
+                        Navigator.pushNamed(context, AppRoutes.homeScreen);
                       }
                     },
                     buttonText: state.page == 0 || state.page == 1 ? 'Next' : 'Let`s Begin'
