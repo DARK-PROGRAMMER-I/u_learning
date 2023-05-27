@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:u_learning/app_blocs/app_blocs.dart';
 import 'package:u_learning/app_blocs/bloc_events.dart';
 import 'package:u_learning/app_blocs/bloc_states.dart';
+import 'package:u_learning/pages/welcome/welcome_blocs/welcome_bloc.dart';
 import 'package:u_learning/routes/route_manager.dart';
 import 'package:u_learning/utils/constants/app_constants.dart';
 import 'package:u_learning/utils/thems/theme.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return BlocProvider(
-          create: (context)=> AppBlocs(),
+          create: (context)=> WelcomeBloc(),
           child: MaterialApp(
             title: 'Flutter Demo',
             debugShowCheckedModeBanner: false,
