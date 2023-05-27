@@ -47,11 +47,21 @@ class _LoginScreenState extends State<LoginScreen> {
             color: MyColors.bluishGreyColor
           ),),
           SizedBox(height: 100.h,),
-          CustomTextFieldNew(
-              controller: _emailCtr,
-              onChanged: (val){},
-              onFieldSubmitted: (val){},
-              // labelText: 'labelText'
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Form(
+              child: Column(
+                children: [
+                  CustomTextFieldNew(
+                      controller: _emailCtr,
+                      onChanged: (val){},
+                      onFieldSubmitted: (val){},
+                    iconData: Icons.person,
+                      labelText: 'Email '
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),

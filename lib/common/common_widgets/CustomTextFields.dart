@@ -102,6 +102,7 @@ class CustomTextField extends StatelessWidget {
 class CustomTextFieldNew extends StatelessWidget {
   final TextEditingController controller;
   final IconData iconData;
+  final String labelText;
   final String? hintText;
   final Function(String) onChanged;
   final Function(String) onFieldSubmitted;
@@ -120,52 +121,69 @@ class CustomTextFieldNew extends StatelessWidget {
     this.inputType,
     this.obscure,
     this.validatorFn,
-    this.icon,  this.maxLines,
+    this.icon,  this.maxLines, required this.iconData, required this.labelText,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:  EdgeInsets.symmetric(vertical: 15.0.h),
-      child: TextFormField(
-        validator: validatorFn,
-        obscureText: obscure??false,
-        controller: controller,
-        keyboardType: inputType,
-        maxLines: maxLines?? 1,
-        style: getBoldStyle(fontSize: 12.spMin, color: MyColors.textBlueColor,),
-        decoration: InputDecoration(
-          fillColor: MyColors.white,
-          filled: true,
-          contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: maxLines != null ? 10: 0),
-          hintText: hintText??"",
-          hintStyle: getBoldStyle(color: MyColors.textBlueColor,fontSize: 12.spMin),
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.r),
-            borderSide: const BorderSide(color: MyColors.borderColor, width: 1.0),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.r),
-            borderSide: const BorderSide(color: MyColors.borderColor, width: 1.0),
-          ),
-          prefixIcon: iconData,
-          border: OutlineInputBorder(),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.r),
-            borderSide:
-            BorderSide(color: MyColors.borderColor.withOpacity(0.5), width: 1.0),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.r),
-            borderSide: BorderSide(
-                color: MyColors.errorColor.withOpacity(0.5),
-                width: 1.0),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          height: 5.h,
+        ),
+        Text(
+          labelText,
+          style: getSemiBoldStyle(
+            fontSize: MyFonts.size14,
+            color: MyColors.themeColor
           ),
         ),
-        onFieldSubmitted: onFieldSubmitted,
-        onChanged: onChanged,
-      ),
+        Padding(
+          padding:  EdgeInsets.symmetric(vertical: 5.0.h),
+          child: TextFormField(
+            validator: validatorFn,
+            obscureText: obscure??false,
+            controller: controller,
+            keyboardType: inputType,
+            maxLines: maxLines?? 1,
+            style: getBoldStyle(fontSize: 12.spMin, color: MyColors.textBlueColor,),
+            decoration: InputDecoration(
+              fillColor: MyColors.white,
+              filled: true,
+              contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: maxLines != null ? 10: 0),
+              hintText: hintText??"",
+              hintStyle: getBoldStyle(color: MyColors.textBlueColor,fontSize: 12.spMin),
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16.r),
+                borderSide: const BorderSide(color: MyColors.borderColor, width: 1.0),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16.r),
+                borderSide: const BorderSide(color: MyColors.borderColor, width: 1.0),
+              ),
+              prefixIcon: Icon(iconData, color: MyColors.themeColor),
+
+              border: OutlineInputBorder(),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16.r),
+                borderSide:
+                BorderSide(color: MyColors.borderColor.withOpacity(0.5), width: 1.0),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16.r),
+                borderSide: BorderSide(
+                    color: MyColors.errorColor.withOpacity(0.5),
+                    width: 1.0),
+              ),
+            ),
+            onFieldSubmitted: onFieldSubmitted,
+            onChanged: onChanged,
+          ),
+        ),
+      ],
     );
   }
 }
