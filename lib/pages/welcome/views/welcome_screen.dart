@@ -19,6 +19,15 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+
+  late PageController pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    pageController = PageController(initialPage: 0);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +40,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               SizedBox(
                 height:510.h,
                 child: PageView(
+                  controller: pageController,
                   onPageChanged: (int newValue){
                     state.page = newValue;
                     BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvents());
@@ -72,9 +82,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: CustomButton(
                     onPressed: (){
                       if(state.page == 0 ){
+                        pageController.jumpToPage(1);
                         state.page = 1;
                         BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvents());
                       }else if( state.page == 1){
+                        pageController.jumpToPage(2);
                         state.page = 2;
                         BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvents());
                       }else{
