@@ -72,7 +72,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     activeColor: MyColors.themeColor,
                     color: MyColors.themeColor.withOpacity(0.3),
                     size: Size.square(8.h),
-                    activeSize: Size(8.w, 8.h),
+                    activeSize: Size(18.w, 8.h),
                     activeShape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.r),
                     )),
@@ -82,11 +82,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: CustomButton(
                     onPressed: (){
                       if(state.page == 0 ){
-                        pageController.jumpToPage(1);
+                        pageController.animateToPage(1, duration: Duration(milliseconds: 300), curve: Curves.easeIn);
                         state.page = 1;
                         BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvents());
                       }else if( state.page == 1){
-                        pageController.jumpToPage(2);
+                        pageController.animateToPage(2, duration: Duration(milliseconds: 300), curve: Curves.easeIn);
                         state.page = 2;
                         BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvents());
                       }else{
