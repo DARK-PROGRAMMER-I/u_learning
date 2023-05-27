@@ -1,4 +1,5 @@
 import 'package:u_learning/common/common_widgets/CustomTextFields.dart';
+import 'package:u_learning/common/common_widgets/custom_button.dart';
 import 'package:u_learning/utils/constants/assets_manager.dart';
 
 import '../../../common/common_libs.dart';
@@ -89,7 +90,10 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
 
-
+          CustomButton(
+              onPressed: (){},
+              buttonText: buttonText
+          ),
         ],
       ),
     );
