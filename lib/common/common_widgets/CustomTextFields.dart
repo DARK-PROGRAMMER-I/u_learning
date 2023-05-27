@@ -101,6 +101,7 @@ class CustomTextField extends StatelessWidget {
 
 class CustomTextFieldNew extends StatelessWidget {
   final TextEditingController controller;
+  final IconData iconData;
   final String? hintText;
   final Function(String) onChanged;
   final Function(String) onFieldSubmitted;
@@ -142,22 +143,23 @@ class CustomTextFieldNew extends StatelessWidget {
           floatingLabelBehavior: FloatingLabelBehavior.always,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.r),
-            borderSide: const BorderSide(color: MyColors.white, width: 1.0),
+            borderSide: const BorderSide(color: MyColors.borderColor, width: 1.0),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.r),
-            borderSide: const BorderSide(color: MyColors.textBlueColor, width: 1.0),
+            borderSide: const BorderSide(color: MyColors.borderColor, width: 1.0),
           ),
+          prefixIcon: iconData,
           border: OutlineInputBorder(),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.r),
             borderSide:
-            BorderSide(color: MyColors.bodyColor.withOpacity(0.5), width: 1.0),
+            BorderSide(color: MyColors.borderColor.withOpacity(0.5), width: 1.0),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.r),
             borderSide: BorderSide(
-                color: MyColors.bodyColor.withOpacity(0.5),
+                color: MyColors.errorColor.withOpacity(0.5),
                 width: 1.0),
           ),
         ),
