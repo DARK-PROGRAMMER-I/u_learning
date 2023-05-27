@@ -13,6 +13,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _emailCtr = TextEditingController();
   TextEditingController _passCtr = TextEditingController();
+  final GlobalKey _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
@@ -50,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Form(
+              key: _formKey,
               child: Column(
                 children: [
                   CustomTextFieldNew(
@@ -58,6 +60,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       onFieldSubmitted: (val){},
                     iconData: Icons.person,
                       labelText: 'Email '
+                  ),
+                  SizedBox(height: 10.h,),
+                  CustomTextFieldNew(
+                      controller: _emailCtr,
+                      onChanged: (val){},
+                      onFieldSubmitted: (val){},
+                      iconData: Icons.lock,
+                      labelText: 'Password '
                   ),
                 ],
               ),

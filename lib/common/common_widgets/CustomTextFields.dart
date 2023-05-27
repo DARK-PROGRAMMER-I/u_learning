@@ -164,8 +164,7 @@ class CustomTextFieldNew extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16.r),
                 borderSide: const BorderSide(color: MyColors.borderColor, width: 1.0),
               ),
-              prefixIcon: Icon(iconData, color: MyColors.themeColor),
-
+              prefixIcon: Icon(iconData,  size: 18.spMin),
               border: OutlineInputBorder(),
               focusedErrorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.r),
