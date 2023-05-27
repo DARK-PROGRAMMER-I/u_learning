@@ -45,9 +45,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ),
           SizedBox(height: 20.h,),
-          Text('Or use your email account login.', style: getRegularStyle(
+          Text('Or use your email account login.',
+            style: getRegularStyle(
             color: MyColors.bluishGreyColor
-          ),),
+          ),
+          textAlign: TextAlign.center,
+          ),
           SizedBox(height: 120.h,),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
