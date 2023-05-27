@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:u_learning/pages/home/home_blocs/bloc_states.dart';
 
-import '../../../app_blocs/app_blocs.dart';
-import '../../../app_blocs/bloc_events.dart';
-import '../../../app_blocs/bloc_states.dart';
 import '../../../common/common_libs.dart';
+import '../home_blocs/home_blocs.dart';
+import '../home_blocs/home_events.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.title});

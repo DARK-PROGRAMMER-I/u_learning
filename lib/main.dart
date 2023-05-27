@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:u_learning/app_blocs/app_blocs.dart';
-import 'package:u_learning/app_blocs/bloc_events.dart';
-import 'package:u_learning/app_blocs/bloc_states.dart';
+import 'package:u_learning/pages/home/home_blocs/home_blocs.dart';
 import 'package:u_learning/pages/welcome/welcome_blocs/welcome_bloc.dart';
 import 'package:u_learning/routes/route_manager.dart';
 import 'package:u_learning/utils/constants/app_constants.dart';
