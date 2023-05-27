@@ -5,20 +5,20 @@ import '../../../app_blocs/bloc_events.dart';
 import '../../../app_blocs/bloc_states.dart';
 import '../../../common/common_libs.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppBlocs, BlocStates>(
+    return BlocBuilder<HomeBlocs, HomeStates>(
       builder: (BuildContext context, state) {
         return Scaffold(
           appBar: AppBar(
@@ -43,12 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               FloatingActionButton(
-                onPressed: (){BlocProvider.of<AppBlocs>(context).add(Increment());},
+                onPressed: (){BlocProvider.of<HomeBlocs>(context).add(Increment());},
                 tooltip: 'Increment',
                 child: const Icon(Icons.add),
               ),
               FloatingActionButton(
-                onPressed: (){BlocProvider.of<AppBlocs>(context).add(Decrement());},
+                onPressed: (){BlocProvider.of<HomeBlocs>(context).add(Decrement());},
                 tooltip: 'Decrement',
                 child: const Icon(Icons.remove),
               ),

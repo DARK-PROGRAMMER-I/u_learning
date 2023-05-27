@@ -1,8 +1,8 @@
-class BlocStates {
+class HomeStates {
   int counter;
-  BlocStates({required this.counter});
+  HomeStates({required this.counter});
 }
 
-class InitState extends BlocStates{
+class InitState extends HomeStates{
   InitState(): super(counter: 0);
 }

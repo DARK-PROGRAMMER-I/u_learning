@@ -1,3 +1,3 @@
-class BlocEvents{}
-class Increment extends BlocEvents{}
-class Decrement extends BlocEvents{}
+class HomeEvents{}
+class Increment extends HomeEvents{}
+class Decrement extends HomeEvents{}
