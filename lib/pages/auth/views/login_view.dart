@@ -89,10 +89,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-
+          SizedBox(height: 70.h,),
           CustomButton(
-              onPressed: (){},
-              buttonText: buttonText
+            onPressed: (){},
+            buttonText: 'Log In',
+            buttonWidth: 345.w,
+
           ),
         ],
       ),
