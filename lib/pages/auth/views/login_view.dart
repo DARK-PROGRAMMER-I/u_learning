@@ -47,12 +47,14 @@ class _LoginScreenState extends State<LoginScreen> {
           Text('Or use your email account login.', style: getRegularStyle(
             color: MyColors.bluishGreyColor
           ),),
-          SizedBox(height: 100.h,),
+          SizedBox(height: 120.h,),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Form(
               key: _formKey,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CustomTextFieldNew(
                       controller: _emailCtr,
@@ -69,10 +71,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       iconData: Icons.lock,
                       labelText: 'Password '
                   ),
+
+                  SizedBox(height: 20.h,),
+                  Text(
+                    'Forgot Password',
+                    style: TextStyle(
+                      fontSize: MyFonts.size14,
+                      decoration: TextDecoration.underline,
+                      fontWeight: FontWeightManager.semiBold,
+                      color: MyColors.themeColor
+                    ),
+                  ),
+
+
                 ],
               ),
             ),
           ),
+
+
         ],
       ),
     );

@@ -137,7 +137,7 @@ class CustomTextFieldNew extends StatelessWidget {
           labelText,
           style: getSemiBoldStyle(
             fontSize: MyFonts.size14,
-            color: MyColors.themeColor
+            color: MyColors.textBlueColor
           ),
         ),
         Padding(
