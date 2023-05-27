@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'home_events.dart';
-import 'bloc_states.dart';
+import 'home_states.dart';
 
 class HomeBlocs extends Bloc<HomeEvents, HomeStates>{
   HomeBlocs(): super(InitState()){

@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:u_learning/pages/home/home_blocs/bloc_states.dart';
+import 'package:u_learning/pages/home/home_blocs/home_states.dart';
 
 import '../../../common/common_libs.dart';
 import '../home_blocs/home_blocs.dart';
