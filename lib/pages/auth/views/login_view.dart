@@ -47,11 +47,11 @@ class _LoginScreenState extends State<LoginScreen> {
             color: MyColors.bluishGreyColor
           ),),
           SizedBox(height: 100.h,),
-          CustomTextField(
-              controller: controller,
+          CustomTextFieldNew(
+              controller: _emailCtr,
               onChanged: (val){},
               onFieldSubmitted: (val){},
-              labelText: 'labelText'
+              // labelText: 'labelText'
           ),
         ],
       ),

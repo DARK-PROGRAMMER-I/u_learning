@@ -98,6 +98,76 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
+
+class CustomTextFieldNew extends StatelessWidget {
+  final TextEditingController controller;
+  final String? hintText;
+  final Function(String) onChanged;
+  final Function(String) onFieldSubmitted;
+  final TextInputType? inputType;
+  final bool? obscure;
+  final IconData? icon;
+  final String? Function(String?)? validatorFn;
+  final int? maxLines;
+
+  const CustomTextFieldNew({
+    Key? key,
+    required this.controller,
+    this.hintText,
+    required this.onChanged,
+    required this.onFieldSubmitted,
+    this.inputType,
+    this.obscure,
+    this.validatorFn,
+    this.icon,  this.maxLines,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:  EdgeInsets.symmetric(vertical: 15.0.h),
+      child: TextFormField(
+        validator: validatorFn,
+        obscureText: obscure??false,
+        controller: controller,
+        keyboardType: inputType,
+        maxLines: maxLines?? 1,
+        style: getBoldStyle(fontSize: 12.spMin, color: MyColors.textBlueColor,),
+        decoration: InputDecoration(
+          fillColor: MyColors.white,
+          filled: true,
+          contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: maxLines != null ? 10: 0),
+          hintText: hintText??"",
+          hintStyle: getBoldStyle(color: MyColors.textBlueColor,fontSize: 12.spMin),
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16.r),
+            borderSide: const BorderSide(color: MyColors.white, width: 1.0),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16.r),
+            borderSide: const BorderSide(color: MyColors.textBlueColor, width: 1.0),
+          ),
+          border: OutlineInputBorder(),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16.r),
+            borderSide:
+            BorderSide(color: MyColors.bodyColor.withOpacity(0.5), width: 1.0),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16.r),
+            borderSide: BorderSide(
+                color: MyColors.bodyColor.withOpacity(0.5),
+                width: 1.0),
+          ),
+        ),
+        onFieldSubmitted: onFieldSubmitted,
+        onChanged: onChanged,
+      ),
+    );
+  }
+}
+
 class CustomSearchTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
