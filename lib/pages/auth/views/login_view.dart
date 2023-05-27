@@ -93,8 +93,15 @@ class _LoginScreenState extends State<LoginScreen> {
           CustomButton(
             onPressed: (){},
             buttonText: 'Log In',
-            buttonWidth: 345.w,
-
+            buttonWidth: 330.w,
+            buttonHeight: 50.h,
+          ),
+          CustomButton(
+            onPressed: (){},
+            buttonText: 'Sign Up',
+            buttonWidth: 330.w,
+            buttonHeight: 50.h,
+            backColor: MyColors.paleBlueColor,
           ),
         ],
       ),
