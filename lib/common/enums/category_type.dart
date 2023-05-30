@@ -21,7 +21,7 @@ extension convertTweet on String{
         return AuthType.facebook;
 
       default:
-        return AuthType.product;
+        return AuthType.email;
     }
   }
 }
