@@ -7,6 +7,10 @@ class AuthController{
 
 
   Future onSignIn({required AuthType loginType })async{
+    if(loginType.name.toAuthTypeEnum() == AuthType.email){
 
+    }else{
+
+    }
   }
 }
