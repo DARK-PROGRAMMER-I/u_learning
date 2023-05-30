@@ -3,5 +3,5 @@ class AuthEvents{
 }
 
 class AuthEmailEvent extends AuthEvents{
-
+  final String email;
 }
