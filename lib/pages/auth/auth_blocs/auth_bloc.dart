@@ -11,8 +11,8 @@ class AuthBlocs extends Bloc<AuthEvents, AuthStates>{
     emit(AuthStates(email: emailEvent.email));
   }
 
-  authPaswordEvent(AuthEmailEvent emailEvent, Emitter<AuthStates> emit) {
-    emit(AuthStates(email: emailEvent.email));
+  authPaswordEvent(AuthPasswordEvent passwordEvent, Emitter<AuthStates> emit) {
+    emit(AuthStates(password: passwordEvent.password));
   }
   
 }
