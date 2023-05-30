@@ -4,6 +4,9 @@ import 'package:u_learning/pages/auth/auth_blocs/auth_states.dart';
 
 class AuthBlocs extends Bloc<AuthEvents, AuthStates>{
   AuthBlocs(): super(AuthStates()){
-    on<>((event, emit) => null);
+    on<AuthEmailEvent>((event, emit) => authEmailEvent());
   }
+
+  authEmailEvent(AuthEmailEvent emailEvent, Emitter<AuthStates> emit) {}
+  
 }
