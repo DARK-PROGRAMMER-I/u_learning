@@ -12,9 +12,14 @@ class AuthController{
   Future handleSignIn({required AuthType loginType })async{
     if(loginType.name.toAuthTypeEnum() == AuthType.email){
       final state = context.read<AuthBlocs>().state;
-      if(state.email == null){
+      if(state.email == ''){
 
-      }else if()
+      }else if(state.password == ''){
+
+      }
+
+      final String email = state.email;
+      final String password = state.password;
     }else{
 
     }
