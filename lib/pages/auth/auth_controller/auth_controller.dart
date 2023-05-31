@@ -37,7 +37,7 @@ class AuthController{
 
         }on FirebaseAuthException catch (e, st){
           // debugPrintStack(stackTrace: st);
-          debugPrint(e.code);
+          debugPrint('ERROR CODE: ${e.code}');
           AuthErrors error = AuthErrors.from(e);
           showSnackBar(context, '${error.dialogeTitle} \n ${error.dialogeText}');
         }

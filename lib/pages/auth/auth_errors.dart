@@ -10,7 +10,7 @@ Map<String, AuthErrors> authErrorMapping = {
   'requires-recent-login': AuthErrorRequiresRecentLogin(),
   'no-current-user': AuthErrorsNoCurrentUser(),
   'wrong-password': AuthErrorsWrongPassword(),
-  'CONFIGURATION_NOT_FOUND': AuthErrorsConfigurationNotFound(),
+  'unknown': AuthErrorsConfigurationNotFound(),
 };
 
 @immutable
@@ -56,7 +56,7 @@ class AuthErrorsWrongPassword extends AuthErrors{
   );
 }
 
-// wrong-password
+// unknown
 @immutable
 class AuthErrorsConfigurationNotFound extends AuthErrors{
   AuthErrorsConfigurationNotFound(): super(
