@@ -39,6 +39,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(height: 70.h,),
                 SizedBox(
                   height:510.h,
                   child: PageView(
@@ -66,7 +67,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 70.h,),
+                SizedBox(height: 120.h,),
                 DotsIndicator(
                   dotsCount: 3,
                   position: state.page,
@@ -79,6 +80,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         borderRadius: BorderRadius.circular(10.r),
                       )),
                 ),
+                SizedBox(height: 30.h,),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30.w),
                   child: CustomButton(
