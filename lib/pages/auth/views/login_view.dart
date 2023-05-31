@@ -81,7 +81,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         CustomTextFieldNew(
                           controller: _emailCtr,
                           onChanged: (val){
-                            print(val);
                             context.read<AuthBlocs>().add(AuthEmailEvent(email: val));
                           },
                           onFieldSubmitted: (val){},
