@@ -9,6 +9,7 @@ Map<String, AuthErrors> authErrorMapping = {
   'email-already-in-use': AuthErrorEmailAlreadyInUse(),
   'requires-recent-login': AuthErrorRequiresRecentLogin(),
   'no-current-user': AuthErrorsNoCurrentUser(),
+  'wrong-password': AuthErrorsNoCurrentUser(),
 };
 
 @immutable
@@ -40,6 +41,16 @@ class AuthErrorsNoCurrentUser extends AuthErrors{
   AuthErrorsNoCurrentUser(): super(
     dialogeTitle: 'No Current User!',
     dialogeText: 'No current user with this information was found!',
+
+  );
+}
+
+// wrong-password
+@immutable
+class AuthErrorsWrongPassword extends AuthErrors{
+  AuthErrorsWrongPassword(): super(
+    dialogeTitle: 'Wrong Password!',
+    dialogeText: 'Please check your password and try again!',
 
   );
 }
