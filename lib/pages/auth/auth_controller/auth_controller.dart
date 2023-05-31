@@ -24,6 +24,14 @@ class AuthController{
         final String password = state.password;
 
         try{
+          final credentials  = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+          if(credentials.user == null){
+
+          }
+
+          if(!credentials.user!.emailVerified){
+
+          }
 
         }on FirebaseAuthException catch (e, st){
           debugPrintStack(stackTrace: st);
