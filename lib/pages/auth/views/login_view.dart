@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:u_learning/common/common_widgets/CustomTextFields.dart';
 import 'package:u_learning/common/common_widgets/custom_button.dart';
