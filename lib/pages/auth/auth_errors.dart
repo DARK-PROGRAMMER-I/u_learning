@@ -9,7 +9,8 @@ Map<String, AuthErrors> authErrorMapping = {
   'email-already-in-use': AuthErrorEmailAlreadyInUse(),
   'requires-recent-login': AuthErrorRequiresRecentLogin(),
   'no-current-user': AuthErrorsNoCurrentUser(),
-  'wrong-password': AuthErrorsNoCurrentUser(),
+  'wrong-password': AuthErrorsWrongPassword(),
+  'CONFIGURATION_NOT_FOUND': AuthErrorsConfigurationNotFound(),
 };
 
 @immutable
@@ -51,6 +52,16 @@ class AuthErrorsWrongPassword extends AuthErrors{
   AuthErrorsWrongPassword(): super(
     dialogeTitle: 'Wrong Password!',
     dialogeText: 'Please check your password and try again!',
+
+  );
+}
+
+// wrong-password
+@immutable
+class AuthErrorsConfigurationNotFound extends AuthErrors{
+  AuthErrorsConfigurationNotFound(): super(
+    dialogeTitle: 'Enable Authentication!',
+    dialogeText: 'Please check your firebase settings again!',
 
   );
 }
