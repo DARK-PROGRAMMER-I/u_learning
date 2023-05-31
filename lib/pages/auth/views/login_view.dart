@@ -92,7 +92,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         CustomTextFieldNew(
                           controller: _passCtr,
                           obscure: true,
-                          onChanged: (val){},
+                          onChanged: (val){
+                            context.read<AuthBlocs>().add(AuthPasswordEvent(password: val));
+                          },
                           onFieldSubmitted: (val){},
                           iconData: Icons.lock,
                           labelText: 'Password ',
