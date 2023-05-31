@@ -67,7 +67,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 120.h,),
+                SizedBox(height: 70.h,),
                 DotsIndicator(
                   dotsCount: 3,
                   position: state.page,
