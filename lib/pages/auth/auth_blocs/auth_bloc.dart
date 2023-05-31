@@ -9,6 +9,7 @@ class AuthBlocs extends Bloc<AuthEvents, AuthStates>{
   }
 
   authEmailEvent(AuthEmailEvent emailEvent, Emitter<AuthStates> emit) {
+    print(emailEvent.email);
     emit(state.copyWith(email: emailEvent.email));
   }
 

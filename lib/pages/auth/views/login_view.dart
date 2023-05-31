@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:u_learning/common/common_widgets/CustomTextFields.dart';
 import 'package:u_learning/common/common_widgets/custom_button.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_bloc.dart';
+import 'package:u_learning/pages/auth/auth_blocs/auth_events.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_states.dart';
 import 'package:u_learning/utils/constants/assets_manager.dart';
 
@@ -78,7 +80,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         CustomTextFieldNew(
                           controller: _emailCtr,
-                          onChanged: (val){},
+                          onChanged: (val){
+                            print(val);
+                            context.read<AuthBlocs>().add(AuthEmailEvent(email: val));
+                          },
                           onFieldSubmitted: (val){},
                           iconData: Icons.person,
                           labelText: 'Email ',
