@@ -31,7 +31,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBlocs, AuthStates>(
-
       builder: (BuildContext context, state) {
         return Scaffold(
           body: SingleChildScrollView(
