@@ -2,9 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:u_learning/common/common_widgets/CustomTextFields.dart';
 import 'package:u_learning/common/common_widgets/custom_button.dart';
+import 'package:u_learning/common/enums/category_type.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_bloc.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_events.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_states.dart';
+import 'package:u_learning/pages/auth/auth_controller/auth_controller.dart';
 import 'package:u_learning/utils/constants/assets_manager.dart';
 
 import '../../../common/common_libs.dart';
@@ -121,7 +123,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 70.h,),
                 CustomButton(
-                  onPressed: (){},
+                  onPressed: ()async{
+                    AuthController authCtr = AuthController(context: context);
+                    await authCtr.handleSignIn(loginType: AuthType.email);
+                  },
                   buttonText: 'Log In',
                   buttonWidth: 330.w,
                   buttonHeight: 50.h,
