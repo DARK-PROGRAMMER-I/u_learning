@@ -7,7 +7,8 @@ import 'package:u_learning/routes/route_manager.dart';
 import 'package:u_learning/utils/constants/app_constants.dart';
 import 'package:u_learning/utils/thems/theme.dart';
 
-void main() {
+void main() async{
+
   runApp(const MyApp());
 }
 
