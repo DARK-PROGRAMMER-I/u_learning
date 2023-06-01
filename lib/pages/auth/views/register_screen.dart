@@ -19,8 +19,8 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  TextEditingController _emailCtr = TextEditingController();
-  TextEditingController _passCtr = TextEditingController();
+  final TextEditingController _emailCtr = TextEditingController();
+  final TextEditingController _passCtr = TextEditingController();
   final GlobalKey _formKey = GlobalKey<FormState>();
 
   @override
@@ -41,10 +41,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 SizedBox(height: 70.h,),
                 Row(
                   children: [
-                    Icon(
-                      Icons.arrow_back_ios_new_outlined,
-                      color: MyColors.profileIconsColor,
-                      size: 18.spMin,
+                    Padding(
+                      padding: EdgeInsets.only(left: 18.w),
+                      child: Icon(
+                        Icons.arrow_back_ios_new_outlined,
+                        color: MyColors.profileIconsColor,
+                        size: 18.spMin,
+                      ),
                     ),
                     SizedBox(width: 150.w,),
                     Text('Sign Up', style: getMediumStyle(fontSize: MyFonts.size16),),
