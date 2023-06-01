@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppConstants {
-  static const double screenWidget = 385;
+  static const double screenWidth = 385;
   static const double screenHeight = 812;
   static double padding = 20.h;
   static const appName='Just Go Out';

@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(AppConstants.screenWidget, AppConstants.screenHeight),
+      designSize: const Size(AppConstants.screenWidth, AppConstants.screenHeight),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             // home: const MyHomePage(title: 'Flutter Demo Home Page'),
             initialRoute: AppRoutes.welcomeScreen,
             onGenerateRoute: AppRoutes.onGenerateRoute,
-            
+
           ),
         );
       },

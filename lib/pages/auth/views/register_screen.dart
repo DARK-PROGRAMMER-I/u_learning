@@ -41,9 +41,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 SizedBox(height: 70.h,),
                 Row(
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.arrow_back_ios_new_outlined,
-                      color: MyColors.profileIconsColor,),
+                      color: MyColors.profileIconsColor,
+                      size: 18.spMin,
+                    ),
+                    SizedBox(width: 150.w,),
                     Text('Sign Up', style: getMediumStyle(fontSize: MyFonts.size16),),
                   ],
                 ),
