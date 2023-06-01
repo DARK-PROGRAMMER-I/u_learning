@@ -78,8 +78,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                           onFieldSubmitted: (val){},
                           iconData: Icons.person,
-                          labelText: 'Email ',
-                          hintText: 'Enter your email',
+                          labelText: 'User Name ',
+                          hintText: 'Enter your user name',
                         ),
                         SizedBox(height: 10.h,),
                         CustomTextFieldNew(
@@ -88,7 +88,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             context.read<AuthBlocs>().add(AuthEmailEvent(email: val));
                           },
                           onFieldSubmitted: (val){},
-                          iconData: Icons.person,
+                          iconData: Icons.alternate_email,
                           labelText: 'Email ',
                           hintText: 'Enter your email',
                         ),
@@ -113,8 +113,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                           onFieldSubmitted: (val){},
                           iconData: Icons.lock,
-                          labelText: 'Password ',
-                          hintText: 'Enter your password',
+                          labelText: 'Confirm Password ',
+                          hintText: 'Enter your password again',
                         ),
 
                       ],
