@@ -39,32 +39,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Column(
               children: [
                 SizedBox(height: 70.h,),
-                Text('Log In', style: getMediumStyle(fontSize: MyFonts.size16),),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.arrow_back_ios_new_outlined,
+                      color: MyColors.profileIconsColor,),
+                    Text('Sign Up', style: getMediumStyle(fontSize: MyFonts.size16),),
+                  ],
+                ),
                 SizedBox(height: 15.h,),
                 Divider(height: 1.h, color: MyColors.borderColor,),
                 SizedBox(height: 30.h,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                        borderRadius: BorderRadius.circular(30.r),
-                        onTap: (){},
-                        child: Image.asset(AppAssets.googleIcon, width: 34.w, height: 34.h,)),
-                    SizedBox(width: 30.w,),
-                    InkWell(
-                        borderRadius: BorderRadius.circular(30.r),
-                        onTap: (){},
-                        child: Image.asset(AppAssets.appleIcon, width: 34.w, height: 34.h,)),
-                    SizedBox(width: 30.w,),
-                    InkWell(
-                        borderRadius: BorderRadius.circular(30.r),
-                        onTap: (){},
-                        child: Image.asset(AppAssets.facebookIcon, width: 34.w, height: 34.h,)),
-
-                  ],
-                ),
-                SizedBox(height: 20.h,),
-                Text('Or use your email account login.',
+                Text('Enter your details below to register free',
                   style: getRegularStyle(
                       color: MyColors.bluishGreyColor
                   ),
