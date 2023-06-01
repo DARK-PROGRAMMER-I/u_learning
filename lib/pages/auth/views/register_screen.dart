@@ -62,7 +62,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 120.h,),
+                SizedBox(height: 50.h,),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: Form(
@@ -71,6 +71,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
+                        CustomTextFieldNew(
+                          controller: _emailCtr,
+                          onChanged: (val){
+                            context.read<AuthBlocs>().add(AuthEmailEvent(email: val));
+                          },
+                          onFieldSubmitted: (val){},
+                          iconData: Icons.person,
+                          labelText: 'Email ',
+                          hintText: 'Enter your email',
+                        ),
+                        SizedBox(height: 10.h,),
                         CustomTextFieldNew(
                           controller: _emailCtr,
                           onChanged: (val){
@@ -93,45 +104,33 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           labelText: 'Password ',
                           hintText: 'Enter your password',
                         ),
-
-                        SizedBox(height: 20.h,),
-                        InkWell(
-                          onTap: (){},
-                          child: Text(
-                            'Forgot Password',
-                            style: TextStyle(
-                                fontSize: MyFonts.size14,
-                                decoration: TextDecoration.underline,
-                                fontWeight: FontWeightManager.semiBold,
-                                color: MyColors.themeColor
-                            ),
-                          ),
+                        SizedBox(height: 10.h,),
+                        CustomTextFieldNew(
+                          controller: _passCtr,
+                          obscure: true,
+                          onChanged: (val){
+                            context.read<AuthBlocs>().add(AuthPasswordEvent(password: val));
+                          },
+                          onFieldSubmitted: (val){},
+                          iconData: Icons.lock,
+                          labelText: 'Password ',
+                          hintText: 'Enter your password',
                         ),
-
 
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 70.h,),
-                CustomButton(
-                  onPressed: ()async{
-                    AuthController authCtr = AuthController(context: context);
-                    await authCtr.handleSignIn(loginType: AuthType.email);
-                  },
-                  buttonText: 'Log In',
-                  buttonWidth: 330.w,
-                  buttonHeight: 50.h,
-                ),
+                SizedBox(height: 130.h,),
                 CustomButton(
                   onPressed: (){
-                    Navigator.pushNamed(context, AppRoutes.registerScreen);
+                    // Navigator.pushNamed(context, AppRoutes.registerScreen);
                   },
                   buttonText: 'Sign Up',
                   buttonWidth: 330.w,
                   buttonHeight: 50.h,
-                  backColor: MyColors.white,
-                  textColor: MyColors.blackColor,
+                  backColor: MyColors.themeColor,
+                  textColor: MyColors.white,
                 ),
               ],
             ),
