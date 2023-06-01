@@ -133,6 +133,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 CustomButton(
                   onPressed: (){
+                    context.read<AuthBlocs>().add(AuthEmailEvent(email: ''));
+                    context.read<AuthBlocs>().add(AuthPasswordEvent(password: ''));
                     Navigator.pushNamed(context, AppRoutes.registerScreen);
                   },
                   buttonText: 'Sign Up',
