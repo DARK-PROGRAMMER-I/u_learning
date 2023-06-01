@@ -6,6 +6,8 @@ class AuthBlocs extends Bloc<AuthEvents, AuthStates>{
   AuthBlocs(): super(AuthStates()){
     on<AuthEmailEvent>(authEmailEvent);
     on<AuthPasswordEvent>(authPaswordEvent);
+    on<AuthNameEvent>(authNameEvent);
+    on<AuthCnfrmPasswordEvent>(authCnfrmPaswordEvent);
   }
 
   authEmailEvent(AuthEmailEvent emailEvent, Emitter<AuthStates> emit) {
