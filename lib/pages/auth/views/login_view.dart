@@ -6,6 +6,7 @@ import 'package:u_learning/pages/auth/auth_blocs/auth_bloc.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_events.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_states.dart';
 import 'package:u_learning/pages/auth/auth_controller/auth_controller.dart';
+import 'package:u_learning/routes/route_manager.dart';
 import 'package:u_learning/utils/constants/assets_manager.dart';
 
 import '../../../common/common_libs.dart';
@@ -131,7 +132,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   buttonHeight: 50.h,
                 ),
                 CustomButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pushNamed(context, AppRoutes.registerScreen);
+                  },
                   buttonText: 'Sign Up',
                   buttonWidth: 330.w,
                   buttonHeight: 50.h,
