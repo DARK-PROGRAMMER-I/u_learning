@@ -1,13 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:u_learning/common/common_widgets/CustomTextFields.dart';
 import 'package:u_learning/common/common_widgets/custom_button.dart';
-import 'package:u_learning/common/enums/category_type.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_bloc.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_events.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_states.dart';
-import 'package:u_learning/pages/auth/auth_controller/auth_controller.dart';
-import 'package:u_learning/routes/route_manager.dart';
-import 'package:u_learning/utils/constants/assets_manager.dart';
 
 import '../../../common/common_libs.dart';
 
@@ -43,10 +39,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: 18.w),
-                      child: Icon(
-                        Icons.arrow_back_ios_new_outlined,
-                        color: MyColors.profileIconsColor,
-                        size: 18.spMin,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios_new_outlined,
+                          color: MyColors.profileIconsColor,
+                          size: 18.spMin,
+                        ),
                       ),
                     ),
                     SizedBox(width: 150.w,),
