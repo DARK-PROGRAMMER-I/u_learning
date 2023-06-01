@@ -116,12 +116,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           labelText: 'Confirm Password ',
                           hintText: 'Enter your password again',
                         ),
+                        SizedBox(height: 20.h,),
+                        Text(
+                          'By creating the account, you will have to agree with our terms and conditions.',
+                          style: getMediumStyle(color: MyColors.bluishGreyColor, fontSize: MyFonts.size12),
+                        )
 
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 130.h,),
+                SizedBox(height: 80.h,),
                 CustomButton(
                   onPressed: (){
                     // Navigator.pushNamed(context, AppRoutes.registerScreen);
