@@ -17,3 +17,8 @@ class AuthPasswordEvent extends AuthEvents{
   final String password;
   AuthPasswordEvent({required this.password});
 }
+
+class AuthCnfrmPasswordEvent extends AuthEvents{
+  final String cnfrmPassword;
+  AuthCnfrmPasswordEvent({required this.cnfrmPassword});
+}
