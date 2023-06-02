@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 30.h,),
             Text('Hello,', style: getBoldStyle(fontSize: MyFonts.size26, color: MyColors.borderColor),),
             Text('Malik', style: getBoldStyle(fontSize: MyFonts.size26),),
-            SearchBarHome()
+            SearchBarHome(filterOnTap: () {  },)
           ],
         ),
       ),

@@ -5,8 +5,8 @@ import '../../../common/common_libs.dart';
 import '../../../common/common_widgets/CustomTextFields.dart';
 
 class SearchBarHome extends StatefulWidget {
-  final VoidCallback
-  const SearchBarHome({Key? key}) : super(key: key);
+  final VoidCallback filterOnTap;
+  const SearchBarHome({Key? key, required this.filterOnTap}) : super(key: key);
 
   @override
   State<SearchBarHome> createState() => _SearchBarHomeState();
@@ -41,7 +41,10 @@ class _SearchBarHomeState extends State<SearchBarHome> {
         ),
         SizedBox(width: 5.w,),
         InkWell(
-          onTap: onTap,
+          borderRadius: BorderRadius.circular(50.r),
+          highlightColor: MyColors.white,
+          splashColor: MyColors.white,
+          onTap: widget.filterOnTap,
           child: Container(
             width: 50.w,
             height: 50.h,
