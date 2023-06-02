@@ -48,10 +48,20 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderRadius: BorderRadius.circular(16.r),
                       child: Image.asset(AppAssets.homeImage1, width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),
                   ),
-                  Positioned(
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('OnBoarding', style: getRegularStyle(color: MyColors.dividerColor, fontSize: MyFonts.size12),),
+                        SizedBox(height: 20.h,),
+                        Text('Art & Illustration')
 
-                      child: child,
+                      ],
+                    ),
                   )
+
                 ],
               ),
             )
