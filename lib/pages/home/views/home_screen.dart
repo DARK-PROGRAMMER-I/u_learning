@@ -44,7 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: Stack(
                 children: [
-                  Image.asset(AppAssets.homeImage1, width: MediaQuery.of(context).size.width, fit: BoxFit.cover,)
+                  ClipRRect(
+                      borderRadius: BorderRadius.circular(16.r),
+                      child: Image.asset(AppAssets.homeImage1, width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),
+                  ),
+                  Positioned(
+
+                      child: child,
+                  )
                 ],
               ),
             )
