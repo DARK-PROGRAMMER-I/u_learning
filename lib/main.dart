@@ -30,11 +30,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (context)=> WelcomeBloc(), ),
-            BlocProvider(create: (context)=> HomeBlocs(), ),
-            BlocProvider(create: (context)=> AuthBlocs(), ),
-          ],
+          providers:
 
           child: MaterialApp(
             title: 'Flutter Demo',
