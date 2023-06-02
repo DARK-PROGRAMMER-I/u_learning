@@ -1,9 +1,4 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:u_learning/pages/home/home_blocs/home_states.dart';
-
 import '../../../common/common_libs.dart';
-import '../home_blocs/home_blocs.dart';
-import '../home_blocs/home_events.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, });
@@ -17,6 +12,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Column(
+        children: [
+
+        ],
+      ),
+    );
   }
 }
