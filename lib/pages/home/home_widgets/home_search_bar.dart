@@ -5,6 +5,7 @@ import '../../../common/common_libs.dart';
 import '../../../common/common_widgets/CustomTextFields.dart';
 
 class SearchBarHome extends StatefulWidget {
+  final VoidCallback
   const SearchBarHome({Key? key}) : super(key: key);
 
   @override
@@ -39,15 +40,18 @@ class _SearchBarHomeState extends State<SearchBarHome> {
           ),
         ),
         SizedBox(width: 5.w,),
-        Container(
-          width: 50.w,
-          height: 50.h,
-          margin: EdgeInsets.only(top: 20.h),
-          decoration: BoxDecoration(
-            color: MyColors.themeColor,
-            borderRadius: BorderRadius.circular(16.r)
+        InkWell(
+          onTap: onTap,
+          child: Container(
+            width: 50.w,
+            height: 50.h,
+            margin: EdgeInsets.only(top: 20.h),
+            decoration: BoxDecoration(
+              color: MyColors.themeColor,
+              borderRadius: BorderRadius.circular(16.r)
+            ),
+            child: Image.asset(AppAssets.filterIcon, height: 22.h, width: 22.w,),
           ),
-          child: Image.asset(AppAssets.appleIcon),
         )
       ],
     );

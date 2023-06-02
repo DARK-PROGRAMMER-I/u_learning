@@ -13,6 +13,6 @@ class AppAssets{
   static const String appleIcon = '$iconPath/apple.png';
   static const String menuIcon = '$iconPath/menu.png';
   static const String personIcon = '$iconPath/person.png';
-  static const String personIcon = '$iconPath/person.png';
+  static const String filterIcon = '$iconPath/filter.png';
 
 }
