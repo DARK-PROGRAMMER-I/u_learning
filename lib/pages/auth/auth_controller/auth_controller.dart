@@ -6,6 +6,8 @@ import 'package:u_learning/pages/auth/auth_blocs/auth_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:u_learning/pages/auth/auth_errors.dart';
 
+import '../auth_blocs/auth_events.dart';
+
 class AuthController{
   final BuildContext context;
   AuthController({required this.context});
@@ -16,28 +18,32 @@ class AuthController{
       if(loginType.name.toAuthTypeEnum() == AuthType.email){
         final state = context.read<AuthBlocs>().state;
         if(state.email == ''){
-
+          showSnackBar(context, 'Enter Email!');
         }else if(state.password == ''){
+          showSnackBar(context, 'Enter Password!');
+        }else{
 
+          final String email = state.email;
+          final String password = state.password;
+
+          try{
+            final credentials  = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+            if(credentials.user == null){
+
+            }
+
+            if(!credentials.user!.emailVerified){
+              showSnackBar(context, 'Verify your email!');
+            }else{
+            showSnackBar(context, 'Welcome Home!');
+            }
+
+          }on FirebaseAuthException catch (e, st){
+            AuthErrors error = AuthErrors.from(e);
+            showSnackBar(context, '${error.dialogeTitle} \n ${error.dialogeText}');
+          }
         }
 
-        final String email = state.email;
-        final String password = state.password;
-
-        try{
-          final credentials  = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-          if(credentials.user == null){
-
-          }
-
-          if(!credentials.user!.emailVerified){
-
-          }
-
-        }on FirebaseAuthException catch (e, st){
-          AuthErrors error = AuthErrors.from(e);
-          showSnackBar(context, '${error.dialogeTitle} \n ${error.dialogeText}');
-        }
       }else{
 
       }
@@ -77,24 +83,30 @@ class AuthController{
     }
     else if(state.password  != state.cnfrmPassword){
       showSnackBar(context, 'Passwords Don\'t Match!');
-    }
+    } else{
 
-    final String email = state.email;
-    final String password = state.password;
-    final String userName = state.name;
+      final String email = state.email;
+      final String password = state.password;
+      final String userName = state.name;
 
-    try{
-      final credentials  = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
-      if(credentials.user != null){
-        await credentials.user!.sendEmailVerification();
-        await credentials.user!.updateDisplayName(userName);
-        showSnackBar(context, 'Verification email is sent to your email, make sure you verify it before login again.');
-        Navigator.pop(context);
+      try{
+        final credentials  = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+        if(credentials.user != null){
+          await credentials.user!.sendEmailVerification();
+          await credentials.user!.updateDisplayName(userName);
+          showSnackBar(context, 'Verification email is sent to your email, make sure you verify it before login again.');
+          context.read<AuthBlocs>().add(AuthNameEvent(name: ''));
+          context.read<AuthBlocs>().add(AuthEmailEvent(email: ''));
+          context.read<AuthBlocs>().add(AuthPasswordEvent(password: ''));
+          context.read<AuthBlocs>().add(AuthCnfrmPasswordEvent(cnfrmPassword: ''));
+          Navigator.pop(context);
+        }
+
+      }on FirebaseAuthException catch (e, st){
+        AuthErrors error = AuthErrors.from(e);
+        showSnackBar(context, '${error.dialogeTitle} \n ${error.dialogeText}');
       }
-
-    }on FirebaseAuthException catch (e, st){
-      AuthErrors error = AuthErrors.from(e);
-      showSnackBar(context, '${error.dialogeTitle} \n ${error.dialogeText}');
     }
+
   }
 }
