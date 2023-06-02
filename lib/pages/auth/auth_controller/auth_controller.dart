@@ -89,6 +89,7 @@ class AuthController{
         await credentials.user!.sendEmailVerification();
         await credentials.user!.updateDisplayName(userName);
         showSnackBar(context, 'Verification email is sent to your email, make sure you verify it before login again.');
+        Navigator.pop(context);
       }
 
     }on FirebaseAuthException catch (e, st){

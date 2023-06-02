@@ -6,6 +6,7 @@ import 'package:u_learning/pages/auth/auth_blocs/auth_events.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_states.dart';
 
 import '../../../common/common_libs.dart';
+import '../../../common/enums/category_type.dart';
 import '../auth_controller/auth_controller.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -140,7 +141,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 CustomButton(
                   onPressed: ()async{
                     AuthController authCtr = AuthController(context: context);
-                    await authCtr.handleSignIn(loginType: AuthType.email);
+                    await authCtr.handleRegister(loginType: AuthType.email);
                   },
                   buttonText: 'Sign Up',
                   buttonWidth: 330.w,
