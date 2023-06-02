@@ -51,30 +51,7 @@ class AuthController{
   Future handleRegister({required AuthType loginType })async{
     try{
       if(loginType.name.toAuthTypeEnum() == AuthType.email){
-        final state = context.read<AuthBlocs>().state;
-        if(state.email == ''){
-          showSnackBar(context, 'Enter Email!');
-        }else if(state.password == ''){
 
-        }
-
-        final String email = state.email;
-        final String password = state.password;
-
-        try{
-          final credentials  = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-          if(credentials.user == null){
-
-          }
-
-          if(!credentials.user!.emailVerified){
-
-          }
-
-        }on FirebaseAuthException catch (e, st){
-          AuthErrors error = AuthErrors.from(e);
-          showSnackBar(context, '${error.dialogeTitle} \n ${error.dialogeText}');
-        }
       }else{
 
       }
@@ -83,5 +60,32 @@ class AuthController{
       debugPrint(e.toString());
     }
 
+  }
+
+  Future handleEmailRegistration()async{
+    final state = context.read<AuthBlocs>().state;
+    if(state.email == ''){
+      showSnackBar(context, 'Enter Email!');
+    }else if(state.password == ''){
+
+    }
+
+    final String email = state.email;
+    final String password = state.password;
+
+    try{
+      final credentials  = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+      if(credentials.user == null){
+
+      }
+
+      if(!credentials.user!.emailVerified){
+
+      }
+
+    }on FirebaseAuthException catch (e, st){
+      AuthErrors error = AuthErrors.from(e);
+      showSnackBar(context, '${error.dialogeTitle} \n ${error.dialogeText}');
+    }
   }
 }
