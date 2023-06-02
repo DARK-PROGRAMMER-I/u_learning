@@ -51,7 +51,7 @@ class AuthController{
   Future handleRegister({required AuthType loginType })async{
     try{
       if(loginType.name.toAuthTypeEnum() == AuthType.email){
-
+        handleEmailRegistration();
       }else{
 
       }
@@ -67,20 +67,28 @@ class AuthController{
     if(state.email == ''){
       showSnackBar(context, 'Enter Email!');
     }else if(state.password == ''){
-
+      showSnackBar(context, 'Enter Password!');
+    }
+    else if(state.name == ''){
+      showSnackBar(context, 'Enter your name please!');
+    }
+    else if(state.cnfrmPassword == ''){
+      showSnackBar(context, 'Enter Password Again!');
+    }
+    else if(state.password  != state.cnfrmPassword){
+      showSnackBar(context, 'Passwords Don\'t Match!');
     }
 
     final String email = state.email;
     final String password = state.password;
+    final String userName = state.name;
 
     try{
-      final credentials  = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-      if(credentials.user == null){
-
-      }
-
-      if(!credentials.user!.emailVerified){
-
+      final credentials  = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+      if(credentials.user != null){
+        await credentials.user!.sendEmailVerification();
+        await credentials.user!.updateDisplayName(userName);
+        showSnackBar(context, 'Verification email is sent to your email, make sure you verify it before login again.');
       }
 
     }on FirebaseAuthException catch (e, st){
