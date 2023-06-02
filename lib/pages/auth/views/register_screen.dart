@@ -17,12 +17,16 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _emailCtr = TextEditingController();
   final TextEditingController _passCtr = TextEditingController();
+  final TextEditingController _cnfPassCtr = TextEditingController();
+  final TextEditingController _nameCtr = TextEditingController();
   final GlobalKey _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
     _emailCtr.dispose();
     _passCtr.dispose();
+    _cnfPassCtr.dispose();
+    _nameCtr.dispose();
     super.dispose();
   }
 
@@ -73,9 +77,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         CustomTextFieldNew(
-                          controller: _emailCtr,
+                          controller: _nameCtr,
                           onChanged: (val){
-                            context.read<AuthBlocs>().add(AuthEmailEvent(email: val));
+                            context.read<AuthBlocs>().add(AuthNameEvent(name: val));
                           },
                           onFieldSubmitted: (val){},
                           iconData: Icons.person,
@@ -107,10 +111,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         SizedBox(height: 10.h,),
                         CustomTextFieldNew(
-                          controller: _passCtr,
+                          controller: _cnfPassCtr,
                           obscure: true,
                           onChanged: (val){
-                            context.read<AuthBlocs>().add(AuthPasswordEvent(password: val));
+                            context.read<AuthBlocs>().add(AuthCnfrmPasswordEvent(cnfrmPassword: val));
                           },
                           onFieldSubmitted: (val){},
                           iconData: Icons.lock,
