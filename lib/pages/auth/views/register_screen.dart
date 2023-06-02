@@ -6,6 +6,7 @@ import 'package:u_learning/pages/auth/auth_blocs/auth_events.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_states.dart';
 
 import '../../../common/common_libs.dart';
+import '../auth_controller/auth_controller.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -45,6 +46,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       padding: EdgeInsets.only(left: 18.w),
                       child: InkWell(
                         onTap: (){
+                          context.read<AuthBlocs>().add(AuthNameEvent(name: ''));
+                          context.read<AuthBlocs>().add(AuthEmailEvent(email: ''));
+                          context.read<AuthBlocs>().add(AuthPasswordEvent(password: ''));
+                          context.read<AuthBlocs>().add(AuthCnfrmPasswordEvent(cnfrmPassword: ''));
                           Navigator.pop(context);
                         },
                         child: Icon(
@@ -133,8 +138,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 SizedBox(height: 80.h,),
                 CustomButton(
-                  onPressed: (){
-                    // Navigator.pushNamed(context, AppRoutes.registerScreen);
+                  onPressed: ()async{
+                    AuthController authCtr = AuthController(context: context);
+                    await authCtr.handleSignIn(loginType: AuthType.email);
                   },
                   buttonText: 'Sign Up',
                   buttonWidth: 330.w,
