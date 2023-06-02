@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Image.asset(AppAssets.homeImage1, width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(horizontal: 15.w, vertical: 20.h),
+                    padding: EdgeInsets.only(left: 15.w, top: 20.h),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,12 +60,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text('Art & Illustration', style: getBoldStyle(color: MyColors.white, fontSize: MyFonts.size16),),
                         SizedBox(height: 5.h,),
                         Text('20 / 25 Lessons', style: getRegularStyle(color: MyColors.dividerColor, fontSize: MyFonts.size12),),
-                        // SizedBox(height: 10.h,),
+                        SizedBox(height: 10.h,),
                         CustomButton(
-                          buttonHeight: 20.h,
+                          buttonHeight: 30.h,
                             buttonWidth: 50.w,
                             onPressed: (){},
-                            buttonText: 'Continue'
+                            buttonText: 'Continue',
+                          backColor: MyColors.pinkColor,
                         ),
 
                       ],
