@@ -36,43 +36,51 @@ class _HomeScreenState extends State<HomeScreen> {
             Text('Malik', style: getBoldStyle(fontSize: MyFonts.size26),),
             SearchBarHome(filterOnTap: () {  },),
             SizedBox(height: 10.h,),
-            Container(
+            SizedBox(
               height: 150.h,
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                color: MyColors.yellowStarColor,
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-              child: Stack(
+              child: PageView(
                 children: [
-                  ClipRRect(
+                  Container(
+                    height: 150.h,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: MyColors.yellowStarColor,
                       borderRadius: BorderRadius.circular(16.r),
-                      child: Image.asset(AppAssets.homeImage1, width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 15.w, top: 20.h),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    ),
+                    child: Stack(
                       children: [
-                        Text('OnBoarding', style: getRegularStyle(color: MyColors.dividerColor, fontSize: MyFonts.size12),),
-                        SizedBox(height: 20.h,),
-                        Text('Art & Illustration', style: getBoldStyle(color: MyColors.white, fontSize: MyFonts.size16),),
-                        SizedBox(height: 5.h,),
-                        Text('20 / 25 Lessons', style: getRegularStyle(color: MyColors.dividerColor, fontSize: MyFonts.size12),),
-                        SizedBox(height: 10.h,),
-                        CustomButton(
-                          buttonHeight: 30.h,
-                            buttonWidth: 50.w,
-                            onPressed: (){},
-                            buttonText: 'Continue',
-                          backColor: MyColors.pinkColor,
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(16.r),
+                            child: Image.asset(AppAssets.homeImage1, width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),
                         ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 15.w, top: 20.h),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('OnBoarding', style: getRegularStyle(color: MyColors.dividerColor, fontSize: MyFonts.size12),),
+                              SizedBox(height: 20.h,),
+                              Text('Art & Illustration', style: getBoldStyle(color: MyColors.white, fontSize: MyFonts.size16),),
+                              SizedBox(height: 5.h,),
+                              Text('20 / 25 Lessons', style: getRegularStyle(color: MyColors.dividerColor, fontSize: MyFonts.size12),),
+                              SizedBox(height: 10.h,),
+                              CustomButton(
+                                buttonHeight: 30.h,
+                                  buttonWidth: 50.w,
+                                  onPressed: (){},
+                                  buttonText: 'Continue',
+                                backColor: MyColors.pinkColor,
+                              ),
+
+                            ],
+                          ),
+                        )
 
                       ],
                     ),
-                  )
-
+                  ),
                 ],
               ),
             )
