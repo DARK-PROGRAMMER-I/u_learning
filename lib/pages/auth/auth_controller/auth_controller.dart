@@ -53,7 +53,7 @@ class AuthController{
       if(loginType.name.toAuthTypeEnum() == AuthType.email){
         final state = context.read<AuthBlocs>().state;
         if(state.email == ''){
-
+          showSnackBar(context, 'Enter Email!');
         }else if(state.password == ''){
 
         }
