@@ -15,7 +15,7 @@ class AuthBlocs extends Bloc<AuthEvents, AuthStates>{
   }
 
   authPaswordEvent(AuthPasswordEvent passwordEvent, Emitter<AuthStates> emit) {
-    print('Password Event : ${passwordEvent.password}');
+    // print('Password Event : ${passwordEvent.password}');
     emit(state.copyWith(password: passwordEvent.password));
   }
 
