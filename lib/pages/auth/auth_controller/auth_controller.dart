@@ -5,6 +5,7 @@ import 'package:u_learning/common/enums/category_type.dart';
 import 'package:u_learning/pages/auth/auth_blocs/auth_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:u_learning/pages/auth/auth_errors.dart';
+import 'package:u_learning/routes/route_manager.dart';
 
 import '../auth_blocs/auth_events.dart';
 
@@ -35,7 +36,7 @@ class AuthController{
             if(!credentials.user!.emailVerified){
               showSnackBar(context, 'Verify your email!');
             }else{
-            showSnackBar(context, 'Welcome Home!');
+              Navigator.pushNamed(context, AppRoutes.homeScreen);
             }
 
           }on FirebaseAuthException catch (e, st){

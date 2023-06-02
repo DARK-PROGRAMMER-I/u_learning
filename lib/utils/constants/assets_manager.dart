@@ -11,5 +11,7 @@ class AppAssets{
   static const String googleIcon = '$iconPath/google.png';
   static const String facebookIcon = '$iconPath/facebook.png';
   static const String appleIcon = '$iconPath/apple.png';
+  static const String menuIcon = '$iconPath/menu.png';
+  static const String personIcon = '$iconPath/person.png';
 
 }
