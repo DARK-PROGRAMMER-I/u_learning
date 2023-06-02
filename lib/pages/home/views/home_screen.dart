@@ -56,7 +56,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Text('OnBoarding', style: getRegularStyle(color: MyColors.dividerColor, fontSize: MyFonts.size12),),
                         SizedBox(height: 20.h,),
-                        Text('Art & Illustration')
+                        Text('Art & Illustration', style: getBoldStyle(color: MyColors.white, fontSize: MyFonts.size16),),
+                        Text('Art & Illustration', style: getBoldStyle(color: MyColors.white, fontSize: MyFonts.size16),)
 
                       ],
                     ),
