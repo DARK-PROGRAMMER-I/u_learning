@@ -33,7 +33,21 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 30.h,),
             Text('Hello,', style: getBoldStyle(fontSize: MyFonts.size26, color: MyColors.borderColor),),
             Text('Malik', style: getBoldStyle(fontSize: MyFonts.size26),),
-            SearchBarHome(filterOnTap: () {  },)
+            SearchBarHome(filterOnTap: () {  },),
+            SizedBox(height: 10.h,),
+            Container(
+              height: 150.h,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: MyColors.yellowStarColor,
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+              child: Stack(
+                children: [
+                  Image.asset(AppAssets.)
+                ],
+              ),
+            )
           ],
         ),
       ),
